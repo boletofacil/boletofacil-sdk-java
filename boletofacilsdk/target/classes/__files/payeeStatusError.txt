@@ -1,4 +1,0 @@
-﻿{
-    "success":false,
-    "errorMessage":"Favorecido com CPF/CNPJ 12345678000199 inválido ou não encontrado"
-}

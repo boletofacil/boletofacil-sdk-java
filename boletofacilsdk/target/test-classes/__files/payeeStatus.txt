@@ -1,6 +1,0 @@
-﻿{
-    "success": true,
-    "data" : {
-        "status" : "Aprovado"
-    }
-}

@@ -1,8 +1,0 @@
-{
-    "success": true,
-    "data": {
-        "balance": 100,
-        "withheldBalance": 30,
-        "transferableBalance": 70
-    }
-}

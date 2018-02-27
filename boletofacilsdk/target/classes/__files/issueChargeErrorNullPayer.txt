@@ -1,4 +1,0 @@
-﻿{
-    "success":false,
-    "errorMessage":"Parâmetro obrigatório 'payerName' não está presente"
-}

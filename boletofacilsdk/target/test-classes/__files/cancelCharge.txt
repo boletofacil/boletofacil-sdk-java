@@ -1,4 +1,0 @@
-﻿{
-    "success": true,
-    "data": null
-}
