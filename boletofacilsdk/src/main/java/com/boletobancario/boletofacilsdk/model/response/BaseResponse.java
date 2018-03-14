@@ -12,4 +12,8 @@ public class BaseResponse extends ModelBase {
 	public void setSuccess(Boolean success) {
 		this.success = success;
 	}
+
+	public boolean isSuccess() {
+		return success.booleanValue();
+	}
 }

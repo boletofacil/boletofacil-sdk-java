@@ -4,11 +4,34 @@
 
   <groupId>com.boletobancario</groupId>
   <artifactId>boletofacilsdk</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <packaging>jar</packaging>
+  <name>Boleto Facil Java SDK</name>
+  <description>Boleto Facil JAVA SDK</description>
+  <url>http://www.boletobancario.com/boletofacil</url>
 
-  <name>boletofacilsdk</name>
-  <url>http://maven.apache.org</url>
+  <licenses>
+    <license>
+      <name>The Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>marco</id>
+      <name>Marco Aurelio Torino Ribeiro</name>
+      <email>marco@boletobancario.com</email>
+      <organization>BoletoBancario.com</organization>
+      <organizationUrl>http://www.boletobancario.com</organizationUrl>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>https://github.com/boletofacil/boletofacil-sdk-java</connection>
+    <developerConnection>https://github.com/boletofacil/boletofacil-sdk-java</developerConnection>
+    <url>https://github.com/boletofacil/boletofacil-sdk-java</url>
+  </scm>
 
   <properties>
     <maven.compiler.source>1.7</maven.compiler.source>
@@ -49,10 +72,81 @@
       <version>2.3.0</version>
 	</dependency>
 	<dependency>
+      <groupId>org.slf4j</groupId>
+	  <artifactId>slf4j-simple</artifactId>
+	  <version>1.7.12</version>
+	  <scope>test</scope>
+	</dependency>
+	<dependency>
 	  <groupId>com.github.tomakehurst</groupId>
 	  <artifactId>wiremock</artifactId>
 	  <version>2.14.0</version>
 	  <scope>test</scope>
 	</dependency>
   </dependencies>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>1.6.8</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>ossrh</serverId>
+          <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>boletofacilsdk-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>boletofacilsdk-javadoc</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>1.5</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>

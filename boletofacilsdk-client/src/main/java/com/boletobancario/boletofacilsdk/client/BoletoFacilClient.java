@@ -69,7 +69,7 @@ public class BoletoFacilClient {
 				token = readInput();
 			}
 
-			boletoFacil = new BoletoFacil(BoletoFacilEnvironment.SANDBOX, token);
+			BoletoFacil boletoFacil = new BoletoFacil(BoletoFacilEnvironment.SANDBOX, token);
 		}
 
 		boolean validOption = false;
@@ -125,9 +125,11 @@ public class BoletoFacilClient {
 		try {
 			ChargeResponse response = boletoFacil.issueCharge(charge);
 			showObjectResponseHeader();
-			for (Charge c : response.getData().getCharges()) {
-				System.out.println("");
-				System.out.println(c);
+			if (response.isSuccess()) {
+				for (Charge c : response.getData().getCharges()) {
+					System.out.println("");
+					System.out.println(c);
+				}
 			}
 			showResponseSerialized(response);
 		} catch (BoletoFacilException e) {

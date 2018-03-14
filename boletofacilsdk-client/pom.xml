@@ -2,17 +2,10 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.boletobancario</groupId>
   <artifactId>boletofacilsdk-client</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
   <name>boletofacil-client</name>
 
   <dependencies>
-<dependency>
-    <groupId>com.boletobancario</groupId>
-    <artifactId>boletofacilsdk</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-    <scope>system</scope>
-    <systemPath>/Users/marco/dev/JavaSDK/boletofacilsdk/target/boletofacilsdk-0.0.1-SNAPSHOT.jar</systemPath>
-</dependency>
     <dependency>
     	  <groupId>commons-httpclient</groupId>
       <artifactId>commons-httpclient</artifactId>
@@ -38,22 +31,10 @@
       <artifactId>jaxb-core</artifactId>
       <version>2.3.0</version>
 	</dependency>
+    <dependency>
+      <groupId>com.boletobancario</groupId>
+      <artifactId>boletofacilsdk</artifactId>
+      <version>1.0.1</version>
+    </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-jar-plugin</artifactId>
-		<version>2.4</version>
-		<configuration>
-		  <archive>
-			<manifest>
-			  <mainClass>com.boletobancario.boletofacilsdk.client.App</mainClass>
-			</manifest>
-		  </archive>
-		</configuration>
-	  </plugin>
-    </plugins>
-  </build>
 </project>
