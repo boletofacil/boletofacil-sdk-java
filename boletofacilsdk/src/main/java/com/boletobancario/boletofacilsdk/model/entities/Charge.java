@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.util.Calendar;
 import java.util.List;
 
+import com.boletobancario.boletofacilsdk.model.entities.enums.PaymentType;
+
 public class Charge extends BaseEntity {
 	private String description;
 	private String reference;
@@ -21,6 +23,9 @@ public class Charge extends BaseEntity {
 	private String referralToken;
 	private String feeSchemaToken;
 	private String splitRecipient;
+	private List<PaymentType> paymentTypes;
+	private CreditCard creditCard;
+	private Boolean paymentAdvance;
 	private String code;
 	private String link;
 	private String payNumber;
@@ -202,5 +207,37 @@ public class Charge extends BaseEntity {
 
 	public void setPayments(List<Payment> payments) {
 		this.payments = payments;
+	}
+
+	public List<PaymentType> getPaymentTypes() {
+		return paymentTypes;
+	}
+
+	public void setPaymentTypes(List<PaymentType> paymentTypes) {
+		this.paymentTypes = paymentTypes;
+	}
+
+	public String getPaymentTypesAsString() {
+		return PaymentType.paymentTypeListToString(paymentTypes);
+	}
+
+	public void setPaymentTypes(String paymentTypes) {
+		this.paymentTypes = PaymentType.stringToPaymentTypeList(paymentTypes);
+	}
+
+	public CreditCard getCreditCard() {
+		return creditCard;
+	}
+
+	public void setCreditCard(CreditCard creditCard) {
+		this.creditCard = creditCard;
+	}
+
+	public Boolean getPaymentAdvance() {
+		return paymentAdvance;
+	}
+
+	public void setPaymentAdvance(Boolean paymentAdvance) {
+		this.paymentAdvance = paymentAdvance;
 	}
 }

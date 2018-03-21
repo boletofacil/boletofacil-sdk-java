@@ -69,7 +69,7 @@ public class BoletoFacilClient {
 				token = readInput();
 			}
 
-			BoletoFacil boletoFacil = new BoletoFacil(BoletoFacilEnvironment.SANDBOX, token);
+			boletoFacil = new BoletoFacil(BoletoFacilEnvironment.SANDBOX, token);
 		}
 
 		boolean validOption = false;
@@ -121,6 +121,7 @@ public class BoletoFacilClient {
 		charge.setDescription("Cobrança teste gerada pelo SDK Java");
 		charge.setAmount(BigDecimal.valueOf(176.45));
 		charge.setPayer(payer);
+		charge.setPaymentTypes("BOLETO,CREDIT_CARD");
 
 		try {
 			ChargeResponse response = boletoFacil.issueCharge(charge);

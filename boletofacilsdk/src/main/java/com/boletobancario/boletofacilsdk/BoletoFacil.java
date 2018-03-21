@@ -174,6 +174,13 @@ public class BoletoFacil extends BoletoFacilBase {
 		addUriParameter(requestUri, "notificationUrl", charge.getNotificationUrl());
 		addUriParameter(requestUri, "feeSchemaToken", charge.getFeeSchemaToken());
 		addUriParameter(requestUri, "splitRecipient", charge.getSplitRecipient());
+		addUriParameter(requestUri, "paymentTypes", charge.getPaymentTypesAsString());
+		addUriParameter(requestUri, "creditCardNumber", charge.getCreditCard() == null ? null : charge.getCreditCard().getNumber());
+		addUriParameter(requestUri, "creditCardHolderName", charge.getCreditCard() == null ? null : charge.getCreditCard().getHolderName());
+		addUriParameter(requestUri, "creditCardSecurityCode", charge.getCreditCard() == null ? null : charge.getCreditCard().getSecurityCode());
+		addUriParameter(requestUri, "creditCardExpirationMonth", charge.getCreditCard() == null ? null : charge.getCreditCard().getExpirationMonth());
+		addUriParameter(requestUri, "creditCardExpirationYear", charge.getCreditCard() == null ? null : charge.getCreditCard().getExpirationYear());
+		addUriParameter(requestUri, "paymentAdvance", charge.getPaymentAdvance());
 		// @formatter:on
 	}
 

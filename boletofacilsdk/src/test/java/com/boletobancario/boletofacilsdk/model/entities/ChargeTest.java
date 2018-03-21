@@ -2,6 +2,7 @@ package com.boletobancario.boletofacilsdk.model.entities;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -32,6 +33,10 @@ public class ChargeTest extends AbstractTest {
 		Assert.assertNull(obj.getReferralToken());
 		Assert.assertNull(obj.getFeeSchemaToken());
 		Assert.assertNull(obj.getSplitRecipient());
+		Assert.assertNull(obj.getCreditCard());
+		Assert.assertNull(obj.getPaymentTypes());
+		Assert.assertNull(obj.getPaymentTypesAsString());
+		Assert.assertNull(obj.getPaymentAdvance());
 		Assert.assertNull(obj.getCode());
 		Assert.assertNull(obj.getLink());
 		Assert.assertNull(obj.getPayNumber());
@@ -55,6 +60,9 @@ public class ChargeTest extends AbstractTest {
 		obj.setReferralToken("ABC123");
 		obj.setFeeSchemaToken("XPTO7890");
 		obj.setSplitRecipient("123.456.789-00");
+		obj.setCreditCard(new CreditCard());
+		obj.setPaymentTypes("BOLETO,CREDIT_CARD");
+		obj.setPaymentAdvance(true);
 		obj.setCode("11223344");
 		obj.setLink("https://www.boletobancario.com/link");
 		obj.setPayNumber("23700.123456.789123.546543.79810000012345");
@@ -78,6 +86,10 @@ public class ChargeTest extends AbstractTest {
 		Assert.assertEquals("ABC123", obj.getReferralToken());
 		Assert.assertEquals("XPTO7890", obj.getFeeSchemaToken());
 		Assert.assertEquals("123.456.789-00", obj.getSplitRecipient());
+		Assert.assertNotNull(obj.getCreditCard());
+		Assert.assertEquals(getPaymentList(), obj.getPaymentTypes());
+		Assert.assertEquals("BOLETO,CREDIT_CARD", obj.getPaymentTypesAsString());
+		Assert.assertTrue(obj.getPaymentAdvance());
 		Assert.assertEquals("11223344", obj.getCode());
 		Assert.assertEquals("https://www.boletobancario.com/link", obj.getLink());
 		Assert.assertEquals("23700.123456.789123.546543.79810000012345", obj.getPayNumber());
@@ -106,6 +118,9 @@ public class ChargeTest extends AbstractTest {
 		obj.setReferralToken("ABC123");
 		obj.setFeeSchemaToken("XPTO7890");
 		obj.setSplitRecipient("123.456.789-00");
+		obj.setCreditCard(new CreditCard());
+		obj.setPaymentTypes("BOLETO,CREDIT_CARD");
+		obj.setPaymentAdvance(true);
 		obj.setCode("11223344");
 		obj.setLink("https://www.boletobancario.com/link");
 		obj.setPayNumber("23700.123456.789123.546543.79810000012345");
@@ -165,6 +180,15 @@ public class ChargeTest extends AbstractTest {
 	                        "referralToken: ABC123" + newLine() +
 	                        "feeSchemaToken: XPTO7890" + newLine() +
 	                        "splitRecipient: 123.456.789-00" + newLine() +
+	                        "paymentTypes: [" + newLine() +
+	                        "BOLETO," + newLine() +
+	                        "CREDIT_CARD] " + newLine() +
+	                        "creditCard: number: " + newLine() +
+	                        "holderName: " + newLine() +
+	                        "securityCode: " + newLine() +
+	                        "expirationMonth: " + newLine() +
+	                        "expirationYear: " + newLine() + newLine() +
+	                        "paymentAdvance: true" + newLine() +
 	                        "code: 11223344" + newLine() +
 	                        "link: https://www.boletobancario.com/link" + newLine() +
 	                        "payNumber: 23700.123456.789123.546543.79810000012345" + newLine() +
@@ -189,5 +213,12 @@ public class ChargeTest extends AbstractTest {
 	                        "status: CONFIRMED" + newLine() +
 	                        "] " + newLine(), obj.toString());
         // @formatter:on
+	}
+
+	private List<PaymentType> getPaymentList() {
+		List<PaymentType> types = new ArrayList<>();
+		types.add(PaymentType.BOLETO);
+		types.add(PaymentType.CREDIT_CARD);
+		return types;
 	}
 }
