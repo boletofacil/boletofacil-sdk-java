@@ -41,7 +41,7 @@ Para usar o SDK do Boleto Fácil é necessário definir dois itens:
 Exemplo:
 ```java
 // Cria uma instância do SDK que irá enviar requisições ao ambiente de testes do Boleto Fácil (Sandbox)
-BoletoFacil boletoFacil = new BoletoFacil(BoletoFacilEnvironment.SANDBOX, "XYZ12345"); // XYZ12345 is the API key
+BoletoFacil boletoFacil = new BoletoFacil(BoletoFacilEnvironment.SANDBOX, "XYZ12345"); // XYZ12345 é o token
 ```
 
 ### Gerando uma cobrança
@@ -147,7 +147,7 @@ payee.setName("Favorecido do SDK Java");
 payee.setCpfCnpj("11122233300");
 payee.setEmail("email@teste.com");
 payee.setPassword("senha");
-payee.setBirthDate(Calendar.getInstance()); // O Boleto Fácil rejeita favorecidos recém-nascidos
+payee.setBirthDate(Calendar.getInstance()); // Não funciona: o Boleto Fácil rejeita favorecidos menores de idade
 payee.setPhone("(99) 91234-4321");
 payee.setLinesOfBusiness("Linha de negócio");
 payee.setAccountHolder(person);

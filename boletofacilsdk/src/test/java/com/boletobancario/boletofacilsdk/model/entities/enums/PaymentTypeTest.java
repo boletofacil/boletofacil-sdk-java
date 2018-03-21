@@ -41,7 +41,9 @@ public class PaymentTypeTest extends AbstractTest {
 	@Test
 	public void paymentTypeListToString() {
 		Assert.assertEquals("BOLETO", PaymentType.paymentTypeListToString(boleto));
-		Assert.assertEquals("BOLETO,INSTALLMENT_CREDIT_CARD,CREDIT_CARD", PaymentType.paymentTypeListToString(all));
+		Assert.assertTrue(PaymentType.paymentTypeListToString(all).contains("BOLETO")
+				&& PaymentType.paymentTypeListToString(all).contains("CREDIT_CARD")
+				&& PaymentType.paymentTypeListToString(all).contains("INSTALLMENT_CREDIT_CARD"));
 		Assert.assertEquals(null, PaymentType.paymentTypeListToString(new ArrayList<PaymentType>()));
 		Assert.assertEquals(null, PaymentType.paymentTypeListToString(null));
 	}
