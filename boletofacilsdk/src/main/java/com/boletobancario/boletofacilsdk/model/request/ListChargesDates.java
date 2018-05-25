@@ -7,6 +7,8 @@ public class ListChargesDates extends BaseRequest {
 	private Calendar endDueDate;
 	private Calendar beginPaymentDate;
 	private Calendar endPaymentDate;
+	private Calendar beginPaymentConfirmation;
+	private Calendar endPaymentConfirmation;
 
 	public Calendar getBeginDueDate() {
 		return beginDueDate;
@@ -38,5 +40,21 @@ public class ListChargesDates extends BaseRequest {
 
 	public void setEndPaymentDate(Calendar endPaymentDate) {
 		this.endPaymentDate = endPaymentDate;
+	}
+
+	public Calendar getBeginPaymentConfirmation() {
+		return beginPaymentConfirmation;
+	}
+
+	public void setBeginPaymentConfirmation(Calendar beginPaymentConfirmation) {
+		this.beginPaymentConfirmation = beginPaymentConfirmation;
+	}
+
+	public Calendar getEndPaymentConfirmation() {
+		return endPaymentConfirmation;
+	}
+
+	public void setEndPaymentConfirmation(Calendar endPaymentConfirmation) {
+		this.endPaymentConfirmation = endPaymentConfirmation;
 	}
 }

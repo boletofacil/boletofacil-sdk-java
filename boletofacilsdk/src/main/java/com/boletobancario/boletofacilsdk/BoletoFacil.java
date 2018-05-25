@@ -180,6 +180,7 @@ public class BoletoFacil extends BoletoFacilBase {
 		addUriParameter(requestUri, "creditCardSecurityCode", charge.getCreditCard() == null ? null : charge.getCreditCard().getSecurityCode());
 		addUriParameter(requestUri, "creditCardExpirationMonth", charge.getCreditCard() == null ? null : charge.getCreditCard().getExpirationMonth());
 		addUriParameter(requestUri, "creditCardExpirationYear", charge.getCreditCard() == null ? null : charge.getCreditCard().getExpirationYear());
+		addUriParameter(requestUri, "creditCardHash", charge.getCreditCardHash());
 		addUriParameter(requestUri, "paymentAdvance", charge.getPaymentAdvance());
 		// @formatter:on
 	}

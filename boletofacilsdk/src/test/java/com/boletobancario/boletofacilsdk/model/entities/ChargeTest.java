@@ -43,6 +43,7 @@ public class ChargeTest extends AbstractTest {
 		Assert.assertNull(obj.getCheckoutUrl());
 		Assert.assertNull(obj.getBilletDetails());
 		Assert.assertNull(obj.getPayments());
+		Assert.assertNull(obj.getCreditCardHash());
 
 		obj.setDescription("Charge description");
 		obj.setReference("Reference number");
@@ -69,6 +70,8 @@ public class ChargeTest extends AbstractTest {
 		obj.setCheckoutUrl("https://www.boletobancario.com/checkout");
 		obj.setBilletDetails(new BilletDetails());
 		obj.setPayments(new ArrayList<Payment>());
+		obj.setCreditCardHash("HASH11223344");
+
 		Assert.assertEquals("Charge description", obj.getDescription());
 		Assert.assertEquals("Reference number", obj.getReference());
 		Assert.assertEquals(BigDecimal.valueOf(Double.MAX_VALUE), obj.getAmount());
@@ -96,6 +99,7 @@ public class ChargeTest extends AbstractTest {
 		Assert.assertEquals("https://www.boletobancario.com/checkout", obj.getCheckoutUrl());
 		Assert.assertNotNull(obj.getBilletDetails());
 		Assert.assertNotNull(obj.getPayments());
+		Assert.assertEquals("HASH11223344", obj.getCreditCardHash());
 	}
 
 	@Test
@@ -125,6 +129,7 @@ public class ChargeTest extends AbstractTest {
 		obj.setLink("https://www.boletobancario.com/link");
 		obj.setPayNumber("23700.123456.789123.546543.79810000012345");
 		obj.setCheckoutUrl("https://www.boletobancario.com/checkout");
+		obj.setCreditCardHash("HASH11223344");
 
 		BilletDetails billetDetails = new BilletDetails();
 		billetDetails.setBankAccount("1234-0 / 9438905");
@@ -189,6 +194,7 @@ public class ChargeTest extends AbstractTest {
 	                        "expirationMonth: " + newLine() +
 	                        "expirationYear: " + newLine() + newLine() +
 	                        "paymentAdvance: true" + newLine() +
+	                        "creditCardHash: HASH11223344" + newLine() +
 	                        "code: 11223344" + newLine() +
 	                        "link: https://www.boletobancario.com/link" + newLine() +
 	                        "payNumber: 23700.123456.789123.546543.79810000012345" + newLine() +

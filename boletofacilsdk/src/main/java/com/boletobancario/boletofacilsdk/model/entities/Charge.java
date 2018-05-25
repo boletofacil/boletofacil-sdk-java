@@ -26,6 +26,9 @@ public class Charge extends BaseEntity {
 	private List<PaymentType> paymentTypes;
 	private CreditCard creditCard;
 	private Boolean paymentAdvance;
+	private String creditCardHash;
+
+	// Attributes used only in response
 	private String code;
 	private String link;
 	private String payNumber;
@@ -239,5 +242,13 @@ public class Charge extends BaseEntity {
 
 	public void setPaymentAdvance(Boolean paymentAdvance) {
 		this.paymentAdvance = paymentAdvance;
+	}
+
+	public String getCreditCardHash() {
+		return creditCardHash;
+	}
+
+	public void setCreditCardHash(String creditCardHash) {
+		this.creditCardHash = creditCardHash;
 	}
 }

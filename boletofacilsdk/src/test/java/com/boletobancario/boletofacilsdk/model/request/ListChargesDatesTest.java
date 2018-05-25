@@ -15,14 +15,20 @@ public class ListChargesDatesTest extends AbstractTest {
 		Assert.assertNull(obj.getEndDueDate());
 		Assert.assertNull(obj.getBeginPaymentDate());
 		Assert.assertNull(obj.getEndPaymentDate());
+		Assert.assertNull(obj.getBeginPaymentConfirmation());
+		Assert.assertNull(obj.getEndPaymentConfirmation());
 
 		obj.setBeginDueDate(getMinDate());
 		obj.setEndDueDate(getMaxDate());
 		obj.setBeginPaymentDate(getMinDate());
 		obj.setEndPaymentDate(getMaxDate());
+		obj.setBeginPaymentConfirmation(getMinDate());
+		obj.setEndPaymentConfirmation(getMaxDate());
 		Assert.assertEquals(getMinDate(), obj.getBeginDueDate());
 		Assert.assertEquals(getMaxDate(), obj.getEndDueDate());
 		Assert.assertEquals(getMinDate(), obj.getBeginPaymentDate());
 		Assert.assertEquals(getMaxDate(), obj.getEndPaymentDate());
+		Assert.assertEquals(getMinDate(), obj.getBeginPaymentConfirmation());
+		Assert.assertEquals(getMaxDate(), obj.getEndPaymentConfirmation());
 	}
 }
