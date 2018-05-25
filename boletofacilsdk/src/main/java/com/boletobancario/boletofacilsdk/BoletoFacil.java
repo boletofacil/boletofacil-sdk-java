@@ -199,6 +199,8 @@ public class BoletoFacil extends BoletoFacilBase {
 		addUriParameter(requestUri, "endDueDate", dates.getEndDueDate());
 		addUriParameter(requestUri, "beginPaymentDate", dates.getBeginPaymentDate());
 		addUriParameter(requestUri, "endPaymentDate", dates.getEndPaymentDate());
+		addUriParameter(requestUri, "beginPaymentConfirmation", dates.getBeginPaymentConfirmation());
+		addUriParameter(requestUri, "endPaymentConfirmation", dates.getEndPaymentConfirmation());
 		// @formatter:on
 	}
 
