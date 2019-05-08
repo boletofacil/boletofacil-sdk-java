@@ -44,6 +44,8 @@ public class ChargeTest extends AbstractTest {
 		Assert.assertNull(obj.getBilletDetails());
 		Assert.assertNull(obj.getPayments());
 		Assert.assertNull(obj.getCreditCardHash());
+		Assert.assertNull(obj.getCreditCardId());
+		Assert.assertNull(obj.getCreditCardStore());
 
 		obj.setDescription("Charge description");
 		obj.setReference("Reference number");
@@ -71,6 +73,8 @@ public class ChargeTest extends AbstractTest {
 		obj.setBilletDetails(new BilletDetails());
 		obj.setPayments(new ArrayList<Payment>());
 		obj.setCreditCardHash("HASH11223344");
+		obj.setCreditCardId("XPTO-123");
+		obj.setCreditCardStore(true);
 
 		Assert.assertEquals("Charge description", obj.getDescription());
 		Assert.assertEquals("Reference number", obj.getReference());
@@ -100,6 +104,8 @@ public class ChargeTest extends AbstractTest {
 		Assert.assertNotNull(obj.getBilletDetails());
 		Assert.assertNotNull(obj.getPayments());
 		Assert.assertEquals("HASH11223344", obj.getCreditCardHash());
+		Assert.assertEquals("XPTO-123", obj.getCreditCardId());
+		Assert.assertTrue(obj.getCreditCardStore());
 	}
 
 	@Test
@@ -195,6 +201,8 @@ public class ChargeTest extends AbstractTest {
 	                        "expirationYear: " + newLine() + newLine() +
 	                        "paymentAdvance: true" + newLine() +
 	                        "creditCardHash: HASH11223344" + newLine() +
+	                        "creditCardStore: " + newLine() +
+	                        "creditCardId: " + newLine() +
 	                        "code: 11223344" + newLine() +
 	                        "link: https://www.boletobancario.com/link" + newLine() +
 	                        "payNumber: 23700.123456.789123.546543.79810000012345" + newLine() +

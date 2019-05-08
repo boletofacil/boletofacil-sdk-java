@@ -27,6 +27,8 @@ public class Charge extends BaseEntity {
 	private CreditCard creditCard;
 	private Boolean paymentAdvance;
 	private String creditCardHash;
+	private Boolean creditCardStore;
+	private String creditCardId;
 
 	// Attributes used only in response
 	private String code;
@@ -250,5 +252,21 @@ public class Charge extends BaseEntity {
 
 	public void setCreditCardHash(String creditCardHash) {
 		this.creditCardHash = creditCardHash;
+	}
+
+	public Boolean getCreditCardStore() {
+		return creditCardStore;
+	}
+
+	public void setCreditCardStore(Boolean creditCardStore) {
+		this.creditCardStore = creditCardStore;
+	}
+
+	public String getCreditCardId() {
+		return creditCardId;
+	}
+
+	public void setCreditCardId(String creditCardId) {
+		this.creditCardId = creditCardId;
 	}
 }

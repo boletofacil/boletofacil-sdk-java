@@ -145,6 +145,53 @@ public class BoletoFacilTest extends AbstractTest {
 	}
 
 	@Test
+	public void issueChargeWithCreditCardStoreAndCreditCardId() {
+		expectGetOk("/issue-charge", "issueChargeUnique.txt");
+		Charge charge = getCharge();
+		charge.setCreditCardStore(true);
+		charge.setCreditCardId("XPTO-1234");
+
+		BoletoFacil boletoFacil = getBoletoFacil();
+		ChargeResponse response = boletoFacil.issueCharge(charge);
+
+		Assert.assertNotNull(response);
+		Assert.assertTrue(response.getSuccess());
+		Assert.assertNotNull(response.getData());
+		Assert.assertTrue(response.getData().getCharges().get(0) instanceof Charge);
+		Assert.assertEquals("101", response.getData().getCharges().get(0).getCode());
+		assertDate(getStartDate(), response.getData().getCharges().get(0).getDueDate());
+		Assert.assertEquals(getBaseUrl(),
+		        response.getData().getCharges().get(0).getLink().substring(0, getBaseUrl().length()));
+		Assert.assertEquals("03399.63290 64000.001014 00236.601027 8 67150000025000",
+		        response.getData().getCharges().get(0).getPayNumber());
+
+		verifyGet("/issue-charge");
+	}
+
+	@Test
+	public void issueChargeWithCreditCardId() {
+		expectGetOk("/issue-charge", "issueChargeUnique.txt");
+		Charge charge = getCharge();
+		charge.setCreditCardId("XPTO-1234");
+
+		BoletoFacil boletoFacil = getBoletoFacil();
+		ChargeResponse response = boletoFacil.issueCharge(charge);
+
+		Assert.assertNotNull(response);
+		Assert.assertTrue(response.getSuccess());
+		Assert.assertNotNull(response.getData());
+		Assert.assertTrue(response.getData().getCharges().get(0) instanceof Charge);
+		Assert.assertEquals("101", response.getData().getCharges().get(0).getCode());
+		assertDate(getStartDate(), response.getData().getCharges().get(0).getDueDate());
+		Assert.assertEquals(getBaseUrl(),
+		        response.getData().getCharges().get(0).getLink().substring(0, getBaseUrl().length()));
+		Assert.assertEquals("03399.63290 64000.001014 00236.601027 8 67150000025000",
+		        response.getData().getCharges().get(0).getPayNumber());
+
+		verifyGet("/issue-charge");
+	}
+
+	@Test
 	public void issueChargeWithReferralToken() {
 		expectGetOk("/issue-charge", "issueChargeUnique.txt");
 		Charge charge = getCharge();
