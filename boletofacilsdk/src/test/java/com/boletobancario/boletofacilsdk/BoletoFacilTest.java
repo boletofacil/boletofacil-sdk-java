@@ -146,7 +146,7 @@ public class BoletoFacilTest extends AbstractTest {
 
 	@Test
 	public void issueChargeWithCreditCardStoreAndCreditCardId() {
-		expectGetOk("/issue-charge", "issueChargeUnique.txt");
+		expectGetOk("/issue-charge", "issueChargeWithCreditCardId.txt");
 		Charge charge = getCharge();
 		charge.setCreditCardStore(true);
 		charge.setCreditCardId("XPTO-1234");
@@ -164,6 +164,16 @@ public class BoletoFacilTest extends AbstractTest {
 		        response.getData().getCharges().get(0).getLink().substring(0, getBaseUrl().length()));
 		Assert.assertEquals("03399.63290 64000.001014 00236.601027 8 67150000025000",
 		        response.getData().getCharges().get(0).getPayNumber());
+		Assert.assertNotNull(response.getData().getCharges().get(0).getPayments());
+
+		Payment payment = response.getData().getCharges().get(0).getPayments().get(0);
+		Assert.assertEquals(new BigDecimal("123.45"), payment.getAmount());
+		Assert.assertEquals("XPTO-1234", payment.getCreditCardId());
+		assertDate(getStartDate(), payment.getDate());
+		Assert.assertEquals(new BigDecimal("4.56"), payment.getFee());
+		Assert.assertEquals(Long.valueOf("123456"), payment.getId());
+		Assert.assertEquals(PaymentStatus.CONFIRMED, payment.getStatus());
+		Assert.assertEquals(PaymentType.CREDIT_CARD, payment.getType());
 
 		verifyGet("/issue-charge");
 	}

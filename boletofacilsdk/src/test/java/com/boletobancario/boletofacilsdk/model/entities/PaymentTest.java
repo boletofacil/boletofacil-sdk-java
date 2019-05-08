@@ -21,6 +21,7 @@ public class PaymentTest extends AbstractTest {
 		Assert.assertNull(obj.getFee());
 		Assert.assertNull(obj.getType());
 		Assert.assertNull(obj.getStatus());
+		Assert.assertNull(obj.getCreditCardId());
 
 		obj.setId(Long.MAX_VALUE);
 		obj.setAmount(BigDecimal.valueOf(Double.MAX_VALUE));
@@ -28,11 +29,13 @@ public class PaymentTest extends AbstractTest {
 		obj.setFee(BigDecimal.valueOf(Double.MAX_VALUE));
 		obj.setType(PaymentType.CREDIT_CARD);
 		obj.setStatus(PaymentStatus.DECLINED);
+		obj.setCreditCardId("xpto-credit-card-id");
 		Assert.assertEquals(Long.MAX_VALUE, obj.getId().longValue());
 		Assert.assertEquals(BigDecimal.valueOf(Double.MAX_VALUE), obj.getAmount());
 		Assert.assertEquals(getTodayDate(), obj.getDate());
 		Assert.assertEquals(BigDecimal.valueOf(Double.MAX_VALUE), obj.getFee());
 		Assert.assertEquals(PaymentType.CREDIT_CARD, obj.getType());
 		Assert.assertEquals(PaymentStatus.DECLINED, obj.getStatus());
+		Assert.assertEquals("xpto-credit-card-id", obj.getCreditCardId());
 	}
 }

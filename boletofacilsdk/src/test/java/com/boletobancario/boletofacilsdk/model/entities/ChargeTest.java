@@ -152,6 +152,7 @@ public class ChargeTest extends AbstractTest {
 		payment1.setFee(BigDecimal.valueOf(Double.MAX_VALUE));
 		payment1.setType(PaymentType.CREDIT_CARD);
 		payment1.setStatus(PaymentStatus.DECLINED);
+		payment1.setCreditCardId(obj.getCreditCardId());
 		obj.getPayments().add(payment1);
 		Payment payment2 = new Payment();
 		payment2.setId(Long.MAX_VALUE);
@@ -218,6 +219,7 @@ public class ChargeTest extends AbstractTest {
 	                        "fee: 1.7976931348623157E+308" + newLine() +
 	                        "type: CREDIT_CARD" + newLine() +
 	                        "status: DECLINED" + newLine() +
+	                        "creditCardId: " + newLine() +
 	                        "," + newLine() +
 	                        "id: 9223372036854775807" + newLine() +
 	                        "amount: 1.7976931348623157E+308" + newLine() +
@@ -225,6 +227,7 @@ public class ChargeTest extends AbstractTest {
 	                        "fee: 1.7976931348623157E+308" + newLine() +
 	                        "type: BOLETO" + newLine() +
 	                        "status: CONFIRMED" + newLine() +
+	                        "creditCardId: " + newLine() +
 	                        "] " + newLine(), obj.toString());
         // @formatter:on
 	}

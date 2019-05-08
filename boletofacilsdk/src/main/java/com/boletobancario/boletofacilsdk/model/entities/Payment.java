@@ -13,6 +13,7 @@ public class Payment extends BaseEntity {
 	private BigDecimal fee;
 	private PaymentType type;
 	private PaymentStatus status;
+	private String creditCardId;
 
 	public Long getId() {
 		return id;
@@ -60,5 +61,13 @@ public class Payment extends BaseEntity {
 
 	public void setStatus(PaymentStatus status) {
 		this.status = status;
+	}
+
+	public String getCreditCardId() {
+		return creditCardId;
+	}
+
+	public void setCreditCardId(String creditCardId) {
+		this.creditCardId = creditCardId;
 	}
 }

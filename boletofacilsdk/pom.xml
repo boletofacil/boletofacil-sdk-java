@@ -5,7 +5,7 @@
   <!-- Before build on command line execute: export GPG_TTY=$(tty) -->
   <groupId>com.boletobancario</groupId>
   <artifactId>boletofacilsdk</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.7</version>
   <packaging>jar</packaging>
   <name>Boleto Facil Java SDK</name>
   <description>Boleto Facil JAVA SDK</description>
