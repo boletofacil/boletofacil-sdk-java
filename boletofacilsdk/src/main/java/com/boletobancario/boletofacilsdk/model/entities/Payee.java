@@ -4,158 +4,168 @@ import com.boletobancario.boletofacilsdk.model.entities.enums.Category;
 import com.boletobancario.boletofacilsdk.model.entities.enums.CompanyType;
 
 public class Payee extends Person {
-	private String notificationUrl;
-	private String email;
-	private String password;
-	private String phone;
-	private String linesOfBusiness;
-	private String tradingName;
-	private Person repr;
-	private Person accountHolder;
-	private BankAccount bankAccount;
-	private Category category;
-	private CompanyType companyType;
-	private Address address;
-	private Integer businessAreaId;
-	private Boolean emailOptOut;
-	private Boolean autoApprove;
 
-	private String token;
-	private String status;
+    private String notificationUrl;
+    private String email;
+    private String password;
+    private String phone;
+    private String linesOfBusiness;
+    private String tradingName;
+    private Person repr;
+    private Person accountHolder;
+    private BankAccount bankAccount;
+    private Category category;
+    private CompanyType companyType;
+    private Address address;
+    private Integer businessAreaId;
+    private Boolean emailOptOut;
+    private Boolean autoApprove;
+    private Boolean autoTransfer;
 
-	public String getNotificationUrl() {
-		return notificationUrl;
-	}
+    private String token;
+    private String status;
 
-	public void setNotificationUrl(String notificationUrl) {
-		this.notificationUrl = notificationUrl;
-	}
+    public String getNotificationUrl() {
+        return notificationUrl;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setNotificationUrl(String notificationUrl) {
+        this.notificationUrl = notificationUrl;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public String getPhone() {
+        return phone;
+    }
 
-	public String getLinesOfBusiness() {
-		return linesOfBusiness;
-	}
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
-	public void setLinesOfBusiness(String linesOfBusiness) {
-		this.linesOfBusiness = linesOfBusiness;
-	}
+    public String getLinesOfBusiness() {
+        return linesOfBusiness;
+    }
 
-	public String getTradingName() {
-		return tradingName;
-	}
+    public void setLinesOfBusiness(String linesOfBusiness) {
+        this.linesOfBusiness = linesOfBusiness;
+    }
 
-	public void setTradingName(String tradingName) {
-		this.tradingName = tradingName;
-	}
+    public String getTradingName() {
+        return tradingName;
+    }
 
-	public Person getRepr() {
-		return repr;
-	}
+    public void setTradingName(String tradingName) {
+        this.tradingName = tradingName;
+    }
 
-	public void setRepr(Person repr) {
-		this.repr = repr;
-	}
+    public Person getRepr() {
+        return repr;
+    }
 
-	public Person getAccountHolder() {
-		return accountHolder;
-	}
+    public void setRepr(Person repr) {
+        this.repr = repr;
+    }
 
-	public void setAccountHolder(Person accountHolder) {
-		this.accountHolder = accountHolder;
-	}
+    public Person getAccountHolder() {
+        return accountHolder;
+    }
 
-	public BankAccount getBankAccount() {
-		return bankAccount;
-	}
+    public void setAccountHolder(Person accountHolder) {
+        this.accountHolder = accountHolder;
+    }
 
-	public void setBankAccount(BankAccount bankAccount) {
-		this.bankAccount = bankAccount;
-	}
+    public BankAccount getBankAccount() {
+        return bankAccount;
+    }
 
-	public Category getCategory() {
-		return category;
-	}
+    public void setBankAccount(BankAccount bankAccount) {
+        this.bankAccount = bankAccount;
+    }
 
-	public void setCategory(Category category) {
-		this.category = category;
-	}
+    public Category getCategory() {
+        return category;
+    }
 
-	public CompanyType getCompanyType() {
-		return companyType;
-	}
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
-	public void setCompanyType(CompanyType companyType) {
-		this.companyType = companyType;
-	}
+    public CompanyType getCompanyType() {
+        return companyType;
+    }
 
-	public Address getAddress() {
-		return address;
-	}
+    public void setCompanyType(CompanyType companyType) {
+        this.companyType = companyType;
+    }
 
-	public void setAddress(Address address) {
-		this.address = address;
-	}
+    public Address getAddress() {
+        return address;
+    }
 
-	public Integer getBusinessAreaId() {
-		return businessAreaId;
-	}
+    public void setAddress(Address address) {
+        this.address = address;
+    }
 
-	public void setBusinessAreaId(Integer businessAreaId) {
-		this.businessAreaId = businessAreaId;
-	}
+    public Integer getBusinessAreaId() {
+        return businessAreaId;
+    }
 
-	public Boolean getEmailOptOut() {
-		return emailOptOut;
-	}
+    public void setBusinessAreaId(Integer businessAreaId) {
+        this.businessAreaId = businessAreaId;
+    }
 
-	public void setEmailOptOut(Boolean emailOptOut) {
-		this.emailOptOut = emailOptOut;
-	}
+    public Boolean getEmailOptOut() {
+        return emailOptOut;
+    }
 
-	public Boolean getAutoApprove() {
-		return autoApprove;
-	}
+    public void setEmailOptOut(Boolean emailOptOut) {
+        this.emailOptOut = emailOptOut;
+    }
 
-	public void setAutoApprove(Boolean autoApprove) {
-		this.autoApprove = autoApprove;
-	}
+    public Boolean getAutoApprove() {
+        return autoApprove;
+    }
 
-	public String getToken() {
-		return token;
-	}
+    public void setAutoApprove(Boolean autoApprove) {
+        this.autoApprove = autoApprove;
+    }
 
-	public void setToken(String token) {
-		this.token = token;
-	}
+    public Boolean getAutoTransfer() {
+        return autoTransfer;
+    }
 
-	public String getStatus() {
-		return status;
-	}
+    public void setAutoTransfer(Boolean autoTransfer) {
+        this.autoTransfer = autoTransfer;
+    }
 
-	public void setStatus(String status) {
-		this.status = status;
-	}
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 }
