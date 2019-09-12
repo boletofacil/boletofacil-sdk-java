@@ -5,5 +5,6 @@ public enum CompanyType {
     EI,
     EIRELI,
     LTDA,
-    INSTITUTION_NGO_ASSOCIATION
+    SA,
+    INSTITUTION_NGO_ASSOCIATION;
 }
