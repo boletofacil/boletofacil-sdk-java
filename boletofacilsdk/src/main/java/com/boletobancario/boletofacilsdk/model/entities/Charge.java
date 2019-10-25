@@ -7,266 +7,276 @@ import java.util.List;
 import com.boletobancario.boletofacilsdk.model.entities.enums.PaymentType;
 
 public class Charge extends BaseEntity {
-	private String description;
-	private String reference;
-	private BigDecimal amount;
-	private Calendar dueDate;
-	private Integer installments;
-	private Integer maxOverdueDays;
-	private BigDecimal fine;
-	private BigDecimal interest;
-	private Discount discount;
-	private Payer payer;
-	private Address billingAddress;
-	private Boolean notifyPayer;
-	private String notificationUrl;
-	private String referralToken;
-	private String feeSchemaToken;
-	private String splitRecipient;
-	private List<PaymentType> paymentTypes;
-	private CreditCard creditCard;
-	private Boolean paymentAdvance;
-	private String creditCardHash;
-	private Boolean creditCardStore;
-	private String creditCardId;
 
-	// Attributes used only in response
-	private String code;
-	private String link;
-	private String payNumber;
-	private String checkoutUrl;
-	private BilletDetails billetDetails;
-	private List<Payment> payments;
+    private String description;
+    private String reference;
+    private BigDecimal amount;
+    private BigDecimal totalAmount;
+    private Calendar dueDate;
+    private Integer installments;
+    private Integer maxOverdueDays;
+    private BigDecimal fine;
+    private BigDecimal interest;
+    private Discount discount;
+    private Payer payer;
+    private Address billingAddress;
+    private Boolean notifyPayer;
+    private String notificationUrl;
+    private String referralToken;
+    private String feeSchemaToken;
+    private String splitRecipient;
+    private List<PaymentType> paymentTypes;
+    private CreditCard creditCard;
+    private Boolean paymentAdvance;
+    private String creditCardHash;
+    private Boolean creditCardStore;
+    private String creditCardId;
 
-	public String getDescription() {
-		return description;
-	}
+    // Attributes used only in response
+    private String code;
+    private String link;
+    private String payNumber;
+    private String checkoutUrl;
+    private BilletDetails billetDetails;
+    private List<Payment> payments;
 
-	public void setDescription(String description) {
-		this.description = description;
-	}
+    public String getDescription() {
+        return description;
+    }
 
-	public String getReference() {
-		return reference;
-	}
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
-	public void setReference(String reference) {
-		this.reference = reference;
-	}
+    public String getReference() {
+        return reference;
+    }
 
-	public BigDecimal getAmount() {
-		return amount;
-	}
+    public void setReference(String reference) {
+        this.reference = reference;
+    }
 
-	public void setAmount(BigDecimal amount) {
-		this.amount = amount;
-	}
+    public BigDecimal getAmount() {
+        return amount;
+    }
 
-	public Calendar getDueDate() {
-		return dueDate;
-	}
+    public void setAmount(BigDecimal amount) {
+        this.amount = amount;
+    }
 
-	public void setDueDate(Calendar dueDate) {
-		this.dueDate = dueDate;
-	}
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
+    }
 
-	public Integer getInstallments() {
-		return installments;
-	}
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
+    }
 
-	public void setInstallments(Integer installments) {
-		this.installments = installments;
-	}
+    public Calendar getDueDate() {
+        return dueDate;
+    }
 
-	public Integer getMaxOverdueDays() {
-		return maxOverdueDays;
-	}
+    public void setDueDate(Calendar dueDate) {
+        this.dueDate = dueDate;
+    }
 
-	public void setMaxOverdueDays(Integer maxOverdueDays) {
-		this.maxOverdueDays = maxOverdueDays;
-	}
+    public Integer getInstallments() {
+        return installments;
+    }
 
-	public BigDecimal getFine() {
-		return fine;
-	}
+    public void setInstallments(Integer installments) {
+        this.installments = installments;
+    }
 
-	public void setFine(BigDecimal fine) {
-		this.fine = fine;
-	}
+    public Integer getMaxOverdueDays() {
+        return maxOverdueDays;
+    }
 
-	public BigDecimal getInterest() {
-		return interest;
-	}
+    public void setMaxOverdueDays(Integer maxOverdueDays) {
+        this.maxOverdueDays = maxOverdueDays;
+    }
 
-	public void setInterest(BigDecimal interest) {
-		this.interest = interest;
-	}
+    public BigDecimal getFine() {
+        return fine;
+    }
 
-	public Discount getDiscount() {
-		return discount;
-	}
+    public void setFine(BigDecimal fine) {
+        this.fine = fine;
+    }
 
-	public void setDiscount(Discount discount) {
-		this.discount = discount;
-	}
+    public BigDecimal getInterest() {
+        return interest;
+    }
 
-	public Payer getPayer() {
-		return payer;
-	}
+    public void setInterest(BigDecimal interest) {
+        this.interest = interest;
+    }
 
-	public void setPayer(Payer payer) {
-		this.payer = payer;
-	}
+    public Discount getDiscount() {
+        return discount;
+    }
 
-	public Address getBillingAddress() {
-		return billingAddress;
-	}
+    public void setDiscount(Discount discount) {
+        this.discount = discount;
+    }
 
-	public void setBillingAddress(Address billingAddress) {
-		this.billingAddress = billingAddress;
-	}
+    public Payer getPayer() {
+        return payer;
+    }
 
-	public Boolean getNotifyPayer() {
-		return notifyPayer;
-	}
+    public void setPayer(Payer payer) {
+        this.payer = payer;
+    }
 
-	public void setNotifyPayer(Boolean notifyPayer) {
-		this.notifyPayer = notifyPayer;
-	}
+    public Address getBillingAddress() {
+        return billingAddress;
+    }
 
-	public String getNotificationUrl() {
-		return notificationUrl;
-	}
+    public void setBillingAddress(Address billingAddress) {
+        this.billingAddress = billingAddress;
+    }
 
-	public void setNotificationUrl(String notificationUrl) {
-		this.notificationUrl = notificationUrl;
-	}
+    public Boolean getNotifyPayer() {
+        return notifyPayer;
+    }
 
-	public String getReferralToken() {
-		return referralToken;
-	}
+    public void setNotifyPayer(Boolean notifyPayer) {
+        this.notifyPayer = notifyPayer;
+    }
 
-	public void setReferralToken(String referralToken) {
-		this.referralToken = referralToken;
-	}
+    public String getNotificationUrl() {
+        return notificationUrl;
+    }
 
-	public String getFeeSchemaToken() {
-		return feeSchemaToken;
-	}
+    public void setNotificationUrl(String notificationUrl) {
+        this.notificationUrl = notificationUrl;
+    }
 
-	public void setFeeSchemaToken(String feeSchemaToken) {
-		this.feeSchemaToken = feeSchemaToken;
-	}
+    public String getReferralToken() {
+        return referralToken;
+    }
 
-	public String getSplitRecipient() {
-		return splitRecipient;
-	}
+    public void setReferralToken(String referralToken) {
+        this.referralToken = referralToken;
+    }
 
-	public void setSplitRecipient(String splitRecipient) {
-		this.splitRecipient = splitRecipient;
-	}
+    public String getFeeSchemaToken() {
+        return feeSchemaToken;
+    }
 
-	public String getCode() {
-		return code;
-	}
+    public void setFeeSchemaToken(String feeSchemaToken) {
+        this.feeSchemaToken = feeSchemaToken;
+    }
 
-	public void setCode(String code) {
-		this.code = code;
-	}
+    public String getSplitRecipient() {
+        return splitRecipient;
+    }
 
-	public String getLink() {
-		return link;
-	}
+    public void setSplitRecipient(String splitRecipient) {
+        this.splitRecipient = splitRecipient;
+    }
 
-	public void setLink(String link) {
-		this.link = link;
-	}
+    public String getCode() {
+        return code;
+    }
 
-	public String getPayNumber() {
-		return payNumber;
-	}
+    public void setCode(String code) {
+        this.code = code;
+    }
 
-	public void setPayNumber(String payNumber) {
-		this.payNumber = payNumber;
-	}
+    public String getLink() {
+        return link;
+    }
 
-	public String getCheckoutUrl() {
-		return checkoutUrl;
-	}
+    public void setLink(String link) {
+        this.link = link;
+    }
 
-	public void setCheckoutUrl(String checkoutUrl) {
-		this.checkoutUrl = checkoutUrl;
-	}
+    public String getPayNumber() {
+        return payNumber;
+    }
 
-	public BilletDetails getBilletDetails() {
-		return billetDetails;
-	}
+    public void setPayNumber(String payNumber) {
+        this.payNumber = payNumber;
+    }
 
-	public void setBilletDetails(BilletDetails billetDetails) {
-		this.billetDetails = billetDetails;
-	}
+    public String getCheckoutUrl() {
+        return checkoutUrl;
+    }
 
-	public List<Payment> getPayments() {
-		return payments;
-	}
+    public void setCheckoutUrl(String checkoutUrl) {
+        this.checkoutUrl = checkoutUrl;
+    }
 
-	public void setPayments(List<Payment> payments) {
-		this.payments = payments;
-	}
+    public BilletDetails getBilletDetails() {
+        return billetDetails;
+    }
 
-	public List<PaymentType> getPaymentTypes() {
-		return paymentTypes;
-	}
+    public void setBilletDetails(BilletDetails billetDetails) {
+        this.billetDetails = billetDetails;
+    }
 
-	public void setPaymentTypes(List<PaymentType> paymentTypes) {
-		this.paymentTypes = paymentTypes;
-	}
+    public List<Payment> getPayments() {
+        return payments;
+    }
 
-	public String getPaymentTypesAsString() {
-		return PaymentType.paymentTypeListToString(paymentTypes);
-	}
+    public void setPayments(List<Payment> payments) {
+        this.payments = payments;
+    }
 
-	public void setPaymentTypes(String paymentTypes) {
-		this.paymentTypes = PaymentType.stringToPaymentTypeList(paymentTypes);
-	}
+    public List<PaymentType> getPaymentTypes() {
+        return paymentTypes;
+    }
 
-	public CreditCard getCreditCard() {
-		return creditCard;
-	}
+    public void setPaymentTypes(List<PaymentType> paymentTypes) {
+        this.paymentTypes = paymentTypes;
+    }
 
-	public void setCreditCard(CreditCard creditCard) {
-		this.creditCard = creditCard;
-	}
+    public String getPaymentTypesAsString() {
+        return PaymentType.paymentTypeListToString(paymentTypes);
+    }
 
-	public Boolean getPaymentAdvance() {
-		return paymentAdvance;
-	}
+    public void setPaymentTypes(String paymentTypes) {
+        this.paymentTypes = PaymentType.stringToPaymentTypeList(paymentTypes);
+    }
 
-	public void setPaymentAdvance(Boolean paymentAdvance) {
-		this.paymentAdvance = paymentAdvance;
-	}
+    public CreditCard getCreditCard() {
+        return creditCard;
+    }
 
-	public String getCreditCardHash() {
-		return creditCardHash;
-	}
+    public void setCreditCard(CreditCard creditCard) {
+        this.creditCard = creditCard;
+    }
 
-	public void setCreditCardHash(String creditCardHash) {
-		this.creditCardHash = creditCardHash;
-	}
+    public Boolean getPaymentAdvance() {
+        return paymentAdvance;
+    }
 
-	public Boolean getCreditCardStore() {
-		return creditCardStore;
-	}
+    public void setPaymentAdvance(Boolean paymentAdvance) {
+        this.paymentAdvance = paymentAdvance;
+    }
 
-	public void setCreditCardStore(Boolean creditCardStore) {
-		this.creditCardStore = creditCardStore;
-	}
+    public String getCreditCardHash() {
+        return creditCardHash;
+    }
 
-	public String getCreditCardId() {
-		return creditCardId;
-	}
+    public void setCreditCardHash(String creditCardHash) {
+        this.creditCardHash = creditCardHash;
+    }
 
-	public void setCreditCardId(String creditCardId) {
-		this.creditCardId = creditCardId;
-	}
+    public Boolean getCreditCardStore() {
+        return creditCardStore;
+    }
+
+    public void setCreditCardStore(Boolean creditCardStore) {
+        this.creditCardStore = creditCardStore;
+    }
+
+    public String getCreditCardId() {
+        return creditCardId;
+    }
+
+    public void setCreditCardId(String creditCardId) {
+        this.creditCardId = creditCardId;
+    }
 }
