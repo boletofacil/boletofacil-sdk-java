@@ -151,6 +151,7 @@ public class BoletoFacil extends BoletoFacilBase {
         addUriParameter(requestUri, "description", charge.getDescription());
         addUriParameter(requestUri, "reference", charge.getReference());
         addUriParameter(requestUri, "amount", charge.getAmount());
+        addUriParameter(requestUri, "totalAmount", charge.getTotalAmount());
         addUriParameter(requestUri, "dueDate", charge.getDueDate());
         addUriParameter(requestUri, "installments", charge.getInstallments());
         addUriParameter(requestUri, "maxOverdueDays", charge.getMaxOverdueDays());
