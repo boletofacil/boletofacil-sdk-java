@@ -172,5 +172,5 @@ Juntamente com o projeto do SDK há um outro projeto de um cliente de exemplo (a
 
 ## Suporte
 
-Em caso de dúvidas, problemas ou sugestões, não hesite em contatar nossa [equipe de suporte](mailto:suporte@boletobancario.com).
+Em caso de dúvidas, problemas ou sugestões, não hesite em contatar nossa [equipe de implantação](mailto:implantacao@juno.com.br).
 
